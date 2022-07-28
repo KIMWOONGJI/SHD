@@ -1,4 +1,4 @@
-function resultLTspice = readLTspice(filename, startRow, endRow)
+function resultLTspice = readLTspiceZ(filename, startRow, endRow)
 %IMPORTFILE Import numeric data from a text file as a matrix.
 %   AC220722COMPRESSOR = IMPORTFILE(FILENAME)
 %   Reads data from text file FILENAME for the default selection.

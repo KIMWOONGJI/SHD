@@ -1,4 +1,4 @@
-function resultCOMSOL = readCOMSOL(filename, dataLines)
+function resultCOMSOLFRF = readCOMSOLFRF(filename, dataLines)
 %IMPORTFILE Import data from a text file
 %  AC220722COMPRESSOR2DXOPENEABSZ = IMPORTFILE(FILENAME) reads data from
 %  text file FILENAME for the default selection.  Returns the data as a
@@ -41,6 +41,6 @@ opts.ConsecutiveDelimitersRule = "join";
 opts.LeadingDelimitersRule = "ignore";
 
 % Import the data
-resultCOMSOL = readtable(filename, opts);
+resultCOMSOLFRF = readtable(filename, opts);
 
 end

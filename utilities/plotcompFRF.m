@@ -19,7 +19,7 @@ axes1 = axes('Parent',figure1);
 hold(axes1,'on');
 
 % Create loglog
-loglog(X1,Y1,'DisplayName','MATLAB-Simlink','LineWidth',2,'Color',[0 0 0]);
+plot(X1,Y1,'DisplayName','MATLAB-Simlink','LineWidth',2,'Color',[0 0 0]);
 
 % Create multiple lines using matrix input to loglog
 loglog1 = loglog(X2,YMatrix1,'LineWidth',2,'Color',[1 0 0]);

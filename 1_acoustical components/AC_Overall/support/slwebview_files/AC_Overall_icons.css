@@ -1,0 +1,9 @@
+.AC_Overall0,
+.AC_Overall1,
+.AC_Overall2,
+.AC_Overall3 { background-image: url('AC_Overall_icons.png'); width: 16px; height: 16px; }
+
+.AC_Overall0 { background-position: -0px; }
+.AC_Overall1 { background-position: -16px; }
+.AC_Overall2 { background-position: -32px; }
+.AC_Overall3 { background-position: -48px; }

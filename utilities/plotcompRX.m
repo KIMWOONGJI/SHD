@@ -47,4 +47,4 @@ set(axes1,'FontName','Times New Roman','FontSize',11,'XGrid','on','YGrid',...
 
 % Create legend
 legend1 = legend(axes1,'show');
-set(legend1,'Orientation','horizontal','NumColumns',2);
+set(legend1,'NumColumns',3,'Location','northoutside');

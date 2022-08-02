@@ -1,4 +1,4 @@
-function plotcompZ(X1, Y1, X2, YMatrix1, X3, YMatrix2,f_l,f_u,scale_x)
+function plotcompZ1(X1, Y1, X2, YMatrix1, X3, YMatrix2,f_l,f_u,scale_x)
 %CREATEFIGURE(X1, Y1, X2, YMatrix1, X3, YMatrix2)
 %  X1:  vector of x data
 %  Y1:  vector of y data
@@ -39,13 +39,13 @@ end
 
 % Create multiple lines using matrix input to loglog
 loglog1 = loglog(X2,YMatrix1,'LineWidth',2,'Color',[1 0 0]);
-set(loglog1(1),'DisplayName','LTspice, open(e)','LineStyle','--');
-set(loglog1(2),'DisplayName','LTspice, short(e)','LineStyle',':');
+set(loglog1(1),'DisplayName','LTspice','LineStyle','-');
+% set(loglog1(2),'DisplayName','LTspice, short(e)','LineStyle',':');
 
 % Create multiple lines using matrix input to loglog
 loglog2 = loglog(X3,YMatrix2,'LineWidth',2,'Color',[0 0 1]);
-set(loglog2(1),'DisplayName','COMSOL, open(e)','LineStyle','--');
-set(loglog2(2),'DisplayName','COMSOL, short(e)','LineStyle',':');
+set(loglog2(1),'DisplayName','COMSOL','LineStyle','-');
+% set(loglog2(2),'DisplayName','COMSOL, short(e)','LineStyle',':');
 
 % Create ylabel
 ylabel('Acoustic Impedance [N\cdot s/m^5]');

@@ -1,4 +1,4 @@
-function plotcompFRF(X1, Y1, X2, YMatrix1, X3, YMatrix2,f_l,f_u,scale_x)
+function plotcompFRF(X1, Y1, X2, YMatrix1, X3, YMatrix2,f_l,f_u,scale_x,y_label)
 %CREATEFIGURE(X1, Y1, X2, YMatrix1, X3, YMatrix2)
 %  X1:  vector of x data
 %  Y1:  vector of y data
@@ -21,6 +21,22 @@ hold(axes1,'on');
 % Create loglog
 plot(X1,Y1,'DisplayName','MATLAB-Simlink','LineWidth',2,'Color',[0 0 0]);
 
+[pks,locs] = findpeaks(Y1,X1);
+
+plot(locs,pks,'x','MarkerSize',10,'Marker','x','LineWidth',2,'LineStyle','none','Color',[0 1 0],'HandleVisibility','off');
+
+for i=1:length(locs)
+    text(locs(i)+50,pks(i),num2str(round(locs(i))),'FontName','Times New Roman');
+end
+
+[pks,locs] = findpeaks(-Y1,X1);
+
+plot(locs,-pks,'x','MarkerSize',10,'Marker','x','LineWidth',2,'LineStyle','none','Color',[0 1 0 1],'HandleVisibility','off');
+
+for i=1:length(locs)
+    text(locs(i)+50,-pks(i),num2str(round(locs(i))),'FontName','Times New Roman');
+end
+
 % Create multiple lines using matrix input to loglog
 loglog1 = loglog(X2,YMatrix1,'LineWidth',2,'Color',[1 0 0]);
 set(loglog1(1),'DisplayName','LTspice','LineStyle',':');
@@ -32,7 +48,7 @@ set(loglog2(1),'DisplayName','COMSOL','LineStyle','--');
 % set(loglog2(2),'DisplayName','COMSOL, short(e)','LineStyle',':');
 
 % Create ylabel
-ylabel('Acoustic Impedance [N\cdot s/m^5]');
+ylabel(y_label);
 
 % Create xlabel
 xlabel('Frequency [Hz]');
@@ -46,5 +62,5 @@ set(axes1,'FontName','Times New Roman','FontSize',11,'XGrid','on',...
     'XMinorTick','on','XScale',scale_x,'YGrid','on','YMinorTick','on','YScale',...
     'log');
 % Create legend
-legend(axes1,'show');
-
+legend1 = legend(axes1,'show');
+set(legend1,'NumColumns',3,'Location','northoutside');

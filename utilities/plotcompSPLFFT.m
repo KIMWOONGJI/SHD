@@ -17,7 +17,7 @@ plot(X1,Y1,'LineWidth',1,'Color',[0 0 0]);
 
 [pks,locs] = findpeaks(Y1,X1,'MinPeakProminence',20);
 
-plot(locs,pks,'x','MarkerSize',10,'Marker','x','LineStyle','none','Color',[1 0 0]);
+plot(locs,pks,'x','LineWidth',2,'MarkerSize',10,'Marker','x','LineStyle','none','Color',[0 1 0],'HandleVisibility','off');
 
 for i=1:length(locs)
     text(locs(i)+50,pks(i),num2str(round(locs(i))),'FontName','Times New Roman');
@@ -38,3 +38,6 @@ hold(axes1,'off');
 % Set the remaining axes properties
 set(axes1,'FontName','Times New Roman','FontSize',11,'XGrid','on','YGrid',...
     'on');
+% Create legend
+% legend1 = legend(axes1,'show');
+% set(legend1,'NumColumns',3,'Location','northoutside');

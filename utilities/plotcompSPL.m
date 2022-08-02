@@ -17,6 +17,15 @@ axes1 = axes('Parent',figure1);
 hold(axes1,'on');
 
 plot(X1,Y1,'DisplayName','MATLAB-Simlink','LineWidth',2,'Color',[0 0 0]);
+
+[pks,locs] = findpeaks(Y1,X1);
+
+plot(locs,pks,'x','MarkerSize',10,'Marker','x','LineWidth',2,'LineStyle','none','Color',[0 1 0],'HandleVisibility','off');
+
+for i=1:length(locs)
+    text(locs(i)+50,pks(i),num2str(round(locs(i))),'FontName','Times New Roman');
+end
+
 plot(X2,Y2,'DisplayName','LTspice','LineStyle',':','LineWidth',2,'Color',[1 0 0]);
 plot(X3,Y3,'DisplayName','COMSOL','LineStyle','--','LineWidth',2,'Color',[0 0 1]);
 
@@ -35,5 +44,5 @@ set(axes1,'FontName','Times New Roman','FontSize',11,'XGrid','on',...
     'XMinorTick','on','XScale',scale_x,'YGrid','on','YMinorTick','on','YScale',...
     'linear');
 % Create legend
-legend(axes1,'show');
-
+legend1 = legend(axes1,'show');
+set(legend1,'NumColumns',3,'Location','northoutside');

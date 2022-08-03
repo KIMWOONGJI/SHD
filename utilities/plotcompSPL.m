@@ -16,7 +16,7 @@ figure1 = figure('Position',[100 100 100+800 100+600],'NumberTitle','off','Name'
 axes1 = axes('Parent',figure1);
 hold(axes1,'on');
 
-plot(X1,Y1,'DisplayName','MATLAB-Simlink','LineWidth',2,'Color',[0 0 0]);
+plot(X1,Y1,'DisplayName','MATLAB-Simulink','LineWidth',2,'Color',[0 0 0]);
 
 [pks,locs] = findpeaks(Y1,X1);
 

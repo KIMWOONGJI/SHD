@@ -19,7 +19,7 @@ axes1 = axes('Parent',figure1);
 hold(axes1,'on');
 
 % Create loglog
-loglog(X1,Y1,'DisplayName','MATLAB-Simlink','LineWidth',2,'Color',[0 0 0]);
+loglog(X1,Y1,'DisplayName','MATLAB-Simulink','LineWidth',2,'Color',[0 0 0]);
 
 [pks,locs] = findpeaks(Y1,X1);
 

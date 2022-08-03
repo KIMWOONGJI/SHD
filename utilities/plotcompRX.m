@@ -19,7 +19,7 @@ hold(axes1,'on');
 % Create multiple lines using matrix input to plot
 plot1 = plot(X1,YMatrix1,'LineWidth',2,'Color',[0 0 0]);
 set(plot1(1),'DisplayName','R');
-set(plot1(2),'DisplayName','X, MATLAB-Similink','LineStyle','--');
+set(plot1(2),'DisplayName','X, MATLAB-Simulink','LineStyle','--');
 
 % Create multiple lines using matrix input to plot
 plot2 = plot(X2,YMatrix2,'LineWidth',2,'Color',[1 0 0]);

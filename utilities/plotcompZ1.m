@@ -1,4 +1,4 @@
-function plotcompZ1(X1, Y1, X2, YMatrix1, X3, YMatrix2,f_l,f_u,scale_x)
+function plotcompZ1(X1, Y1, X2, YMatrix2, X3, YMatrix3, X4, YMatrix4,f_l,f_u,scale_x)
 %CREATEFIGURE(X1, Y1, X2, YMatrix1, X3, YMatrix2)
 %  X1:  vector of x data
 %  Y1:  vector of y data
@@ -31,21 +31,25 @@ end
 
 [pks,locs] = findpeaks(-Y1,X1);
 
-plot(locs,-pks,'x','MarkerSize',10,'Marker','x','LineWidth',2,'LineStyle','none','Color',[0 1 0 1],'HandleVisibility','off');
+plot(locs,-pks,'x','MarkerSize',10,'Marker','x','LineWidth',2,'LineStyle','none','Color',[0 1 0],'HandleVisibility','off');
 
 for i=1:length(locs)
     text(locs(i)+50,-pks(i),num2str(round(locs(i))),'FontName','Times New Roman');
 end
 
 % Create multiple lines using matrix input to loglog
-loglog1 = loglog(X2,YMatrix1,'LineWidth',2,'Color',[1 0 0]);
+loglog1 = loglog(X2,YMatrix2,'LineWidth',2,'Color',[1 0 0]);
 set(loglog1(1),'DisplayName','LTspice','LineStyle','-');
 % set(loglog1(2),'DisplayName','LTspice, short(e)','LineStyle',':');
 
 % Create multiple lines using matrix input to loglog
-loglog2 = loglog(X3,YMatrix2,'LineWidth',2,'Color',[0 0 1]);
+loglog2 = loglog(X3,YMatrix3,'LineWidth',2,'Color',[0 0 1]);
 set(loglog2(1),'DisplayName','COMSOL','LineStyle','-');
 % set(loglog2(2),'DisplayName','COMSOL, short(e)','LineStyle',':');
+
+% Create multiple lines using matrix input to loglog
+loglog3 = loglog(X4,YMatrix4,'LineWidth',2,'Color',[1 0 1]);
+set(loglog3(1),'DisplayName','Experiment','LineStyle','-');
 
 % Create ylabel
 ylabel('Acoustic Impedance [N\cdot s/m^5]');
